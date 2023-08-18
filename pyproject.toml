@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "equibatch"
-version = "0.1.0"
+version = "0.1.1"
 description = "Equiareal batch sampler"
 authors = ["Vadim Liventsev <dev@vadim.me>"]
 license = "MIT"
@@ -8,8 +8,6 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.10"
-logwrap = "^11.0.0"
-
 
 [build-system]
 requires = ["poetry-core"]

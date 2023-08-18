@@ -1,12 +1,9 @@
-from logwrap import logwrap
-
 try:
     import torch
     BaseClass = torch.utils.data.sampler.BatchSampler
 except ImportError:
     BaseClass = object
 
-@logwrap
 class EquiarealBatchSampler(BaseClass):
     """
     Most batch samplers keep the number of samples in a batch constant
