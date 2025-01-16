@@ -66,3 +66,7 @@ for input in dataloader:
     loss.backward()
     optimizer.step()
 ```
+
+## Alternatives
+
+If you are using `torchtext`, similar results can be achieved using `batch_size_fn` parameter in [torchtext.data.Iterator](https://pytorch.org/text/0.8.1/_modules/torchtext/data/iterator.html#Iterator)
