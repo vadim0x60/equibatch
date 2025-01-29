@@ -29,8 +29,12 @@ class EquiarealBatchSampler(BaseClass):
         for ix in self.sampler:
             length = self.len_checker(ix)
             expected_footprint = batch_footprint + length
+        
+            nonempty = batch_footprint > 0
+            footprint_at_limit = expected_footprint > self.max_footprint
+            size_at_limit = len(batch) >= self.max_size
 
-            if expected_footprint > self.max_footprint or len(batch) >= self.max_size:
+            if nonempty and (footprint_at_limit or size_at_limit):
                 yield batch
                 batch = []
                 batch_footprint = length
